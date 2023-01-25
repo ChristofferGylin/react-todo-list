@@ -1,4 +1,4 @@
-const deleteItem = (id, data, setData) => {
+const deleteItem = (data, setData, id) => {
 
     const newData = [...data];
 

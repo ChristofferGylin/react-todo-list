@@ -1,3 +1,4 @@
+import Button from "./Button";
 import checkboxChange from "./checkboxChange";
 import deleteItem from "./deleteItem";
 
@@ -17,7 +18,7 @@ const ListItem = (props) => {
             <div className="font-medium">{index + 1}</div>
             <div>{title}</div>
             <div><input type="checkbox" checked={isDone} onChange={() => { checkboxChange(itemId, data, setData) }} /></div>
-            <div><button onClick={() => { deleteItem(itemId, data, setData) }}>Delete</button></div>
+            <div><Button title="Delete" itemId={itemId} data={data} setData={setData} callback={deleteItem} /></div>
         </div>
 
     )

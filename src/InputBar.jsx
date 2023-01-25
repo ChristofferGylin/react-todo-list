@@ -1,4 +1,5 @@
 import newInput from "./newInput";
+import Button from "./Button";
 
 const InputBar = (props) => {
 
@@ -16,12 +17,13 @@ const InputBar = (props) => {
                 <input type="checkbox" id="doneCheckbox" />
             </div>
             <div className="flex flex-col justify-center items-center">
-                <button id="inputButton" className="w-36 border-2 border-slate-300 bg-slate-600 hover:bg-slate-500 rounded-2xl py-2 px-6 text-slate-100 "
+                <Button title="Add to list" id="inputButton" data={data} setData={setData} callback={newInput} />
+                {/* <button id="inputButton" className="w-36 border-2 border-slate-300 bg-slate-600 hover:bg-slate-500 rounded-2xl py-2 px-6 text-slate-100 "
                     onClick={() => {
 
                         newInput(data, setData)
 
-                    }}>Add to list</button>
+                    }}>Add to list</button> */}
             </div>
 
         </div>
