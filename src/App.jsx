@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App flex flex-col w-full justify-start items-center">
       <InputBar data={data} setData={setData} />
-      <List data={data} />
+      <List data={data} setData={setData} />
     </div>
   )
 }
