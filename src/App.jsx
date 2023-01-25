@@ -8,21 +8,17 @@ function App() {
 
   useEffect(() => {
 
-    console.log('useEffect on first render');
-
     const dataFromStorage = JSON.parse(localStorage.getItem('data'));
 
     if (dataFromStorage) {
-      console.log('dataFromStorage:');
-      console.log(dataFromStorage);
+
       setData(dataFromStorage);
+
     }
 
   }, []);
 
   useEffect(() => {
-
-    console.log('useEffect on update');
 
     localStorage.setItem('data', JSON.stringify(data));
 

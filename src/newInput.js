@@ -47,8 +47,6 @@ const newInput = (data, setData) => {
 
     setData(newData);
 
-    console.log(data);
-
     inputField.value = '';
     checkbox.checked = false;
 
