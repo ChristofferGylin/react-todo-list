@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import InputBar from './InputBar'
-import List from './List';
+import ListContainer from './ListContainer';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App flex flex-col w-full justify-start items-center">
       <InputBar data={data} setData={setData} />
-      <List data={data} setData={setData} />
+      <ListContainer data={data} setData={setData} />
     </div>
   )
 }

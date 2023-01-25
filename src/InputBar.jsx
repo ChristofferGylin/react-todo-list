@@ -7,23 +7,22 @@ const InputBar = (props) => {
     const setData = props.setData;
 
     return (
-        <div className="flex justify-center items-end space-x-8 bg-slate-700 w-full p-4">
-            <div className="flex flex-col justify-between items-center">
-                <label htmlFor="inputField">Thing to do:</label>
-                <input type="text" id="inputField" className="border-2 border-slate-300 rounded-xl p-2 bg-slate-100 text-slate-800" />
+        <div className="grid grid-cols-[50px_auto_100px_200px] items-center px-12 font-semibold text-lg text-slate-200 bg-slate-700 border-b fixed top-0 border-slate-800 w-full p-4 shadow-lg shadow-gray-900/50">
+
+            <div className="flex flex-col justify-end items-start col-start-2 w-full mr-2">
+                <label className="ml-2" htmlFor="inputField">TITLE:</label>
+                <input type="text" id="inputField" className="w-full border-2 border-slate-300 rounded-xl py-2 px-4 mr-8 bg-slate-100 text-slate-800" />
             </div>
-            <div className="flex flex-col justify-start items-center">
-                <label htmlFor="doneCheckbox">Done:</label>
-                <input type="checkbox" id="doneCheckbox" />
+
+
+            <div className="grid grid-rows-2 justify-center items-center h-full">
+                <div className="align-self-start"><label htmlFor="doneCheckbox">DONE:</label></div>
+                <input className="w-5 h-5 hover:cursor-pointer justify-self-center" type="checkbox" id="doneCheckbox" />
             </div>
-            <div className="flex flex-col justify-center items-center">
+
+
+            <div className="flex flex-col justify-end items-center h-full">
                 <Button title="Add to list" id="inputButton" data={data} setData={setData} callback={newInput} />
-                {/* <button id="inputButton" className="w-36 border-2 border-slate-300 bg-slate-600 hover:bg-slate-500 rounded-2xl py-2 px-6 text-slate-100 "
-                    onClick={() => {
-
-                        newInput(data, setData)
-
-                    }}>Add to list</button> */}
             </div>
 
         </div>

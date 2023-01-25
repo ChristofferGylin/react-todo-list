@@ -9,7 +9,7 @@ const Button = (props) => {
 
     return (
 
-        <button id={id} className="w-36 border-2 border-slate-300 bg-slate-600 hover:bg-slate-500 rounded-2xl py-2 px-6 text-slate-100 " onClick={() => { callback(data, setData, itemId) }}>{title}</button>
+        <button id={id} className="w-40 border-2 border-slate-300 bg-slate-600 hover:bg-slate-500 rounded-2xl py-2 px-6 text-slate-100 " onClick={() => { callback(data, setData, itemId) }}>{title}</button>
 
     )
 
