@@ -2,15 +2,14 @@ import ListItem from "./ListItem";
 
 const List = (props) => {
 
-    const setData = props.setData;
-    const data = props.data;
+    const { data, dispatch } = props;
 
     return (
 
         data.map((element, i) => {
 
             return (
-                <ListItem key={element.id} index={i} title={element.title} isDone={element.isDone} id={element.id} data={data} setData={setData} />
+                <ListItem key={element.id} index={i} title={element.title} isDone={element.isDone} id={element.id} data={data} dispatch={dispatch} />
             )
 
         })

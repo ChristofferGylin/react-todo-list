@@ -3,8 +3,7 @@ import Button from "./Button";
 
 const InputBar = (props) => {
 
-    const data = props.data;
-    const setData = props.setData;
+    const { data, dispatch } = props;
 
     return (
         <div className="grid grid-cols-[50px_auto_100px_200px] items-center px-12 font-semibold text-lg text-slate-200 bg-slate-700 border-b fixed top-0 border-slate-800 w-full p-4 shadow-lg shadow-gray-900/50">
@@ -22,7 +21,7 @@ const InputBar = (props) => {
 
 
             <div className="flex flex-col justify-end items-center h-full">
-                <Button title="Add to list" id="inputButton" data={data} setData={setData} callback={newInput} />
+                <Button title="Add to list" id="inputButton" data={data} dispatch={dispatch} callback={newInput} />
             </div>
 
         </div>

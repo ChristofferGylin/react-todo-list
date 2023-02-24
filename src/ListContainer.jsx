@@ -2,8 +2,7 @@ import List from "./List"
 
 const ListContainer = (props) => {
 
-    const data = props.data;
-    const setData = props.setData;
+    const { data, dispatch } = props;
 
     return (
 
@@ -14,7 +13,7 @@ const ListContainer = (props) => {
                 <div className="w-full border-l border-slate-400 px-4 py-2 text-center">DONE:</div>
                 <div className="w-full border-l border-slate-400 px-4 py-2 text-center"></div>
             </div>
-            <List data={data} setData={setData} />
+            <List data={data} dispatch={dispatch} />
         </div>
 
     )

@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import InputBar from './InputBar'
 import ListContainer from './ListContainer';
-
+import reducer from './reducer';
 
 function App() {
-  const [data, setData] = useState([]);
+
+  const [state, dispatch] = useReducer(reducer, { data: [] });
 
   useEffect(() => {
 
@@ -12,7 +13,7 @@ function App() {
 
     if (dataFromStorage) {
 
-      setData(dataFromStorage);
+      dispatch({ type: 'data', payload: dataFromStorage });
 
     }
 
@@ -20,14 +21,14 @@ function App() {
 
   useEffect(() => {
 
-    localStorage.setItem('data', JSON.stringify(data));
+    localStorage.setItem('data', JSON.stringify(state.data));
 
-  }, [data]);
+  }, [state.data]);
 
   return (
     <div className="App flex flex-col w-full justify-start items-center">
-      <InputBar data={data} setData={setData} />
-      <ListContainer data={data} setData={setData} />
+      <InputBar data={state.data} dispatch={dispatch} />
+      <ListContainer data={state.data} dispatch={dispatch} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-const newInput = (data, setData) => {
+const newInput = (data, dispatch) => {
     const inputField = document.getElementById('inputField');
     const checkbox = document.getElementById('doneCheckbox')
 
@@ -45,7 +45,7 @@ const newInput = (data, setData) => {
 
     newData.push(input);
 
-    setData(newData);
+    dispatch({ type: 'data', payload: newData });
 
     inputField.value = '';
     checkbox.checked = false;
