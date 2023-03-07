@@ -7,21 +7,28 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, { data: [] });
 
-  useEffect(() => {
+  const getData = () => {
 
-    const dataFromStorage = JSON.parse(localStorage.getItem('data'));
+    const dataFromStorage = localStorage.getItem('gylin-todo-data');
 
     if (dataFromStorage) {
 
-      dispatch({ type: 'data', payload: dataFromStorage });
+      const json = JSON.parse(dataFromStorage);
+      dispatch({ type: 'data', payload: json });
 
     }
+
+  }
+
+  useEffect(() => {
+
+    getData();
 
   }, []);
 
   useEffect(() => {
 
-    localStorage.setItem('data', JSON.stringify(state.data));
+
 
   }, [state.data]);
 

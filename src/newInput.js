@@ -46,6 +46,7 @@ const newInput = (data, dispatch) => {
     newData.push(input);
 
     dispatch({ type: 'data', payload: newData });
+    localStorage.setItem('gylin-todo-data', JSON.stringify(newData));
 
     inputField.value = '';
     checkbox.checked = false;
